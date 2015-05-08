@@ -1,7 +1,8 @@
 {
     "name": "chrisarmitage/phpuceu-avengers",
     "require": {
-        "rdlowrey/auryn": "^0.15.0"
+        "rdlowrey/auryn": "^0.15.0",
+        "mockery/mockery": "^0.9.4"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.6"
