@@ -20,11 +20,13 @@ class AvengersInitiativeTest extends \PHPUnit_Framework_TestCase
     public function testAvengersCanBeAddedToTheRollCall() {
         $initiative = new \Avengers\AvengersInitiative();
         
+        $availableAvengers = $initiative->getAvailableAvengers();        
+        $this->assertEquals(0, count($availableAvengers));
+        
         $avenger = M::mock('Avengers\Avenger');
         $initiative->addAvenger($avenger);
         
-        $availableAvengers = $initiative->getAvailableAvengers();
-        
+        $availableAvengers = $initiative->getAvailableAvengers();        
         $this->assertEquals(1, count($availableAvengers));
     }
 }
