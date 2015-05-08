@@ -12,13 +12,15 @@ class AvengersInitiativeTest extends \PHPUnit_Framework_TestCase
     }
     
     public function testClassAvailable() {
-        $initiative = new \Avengers\AvengersInitiative();
+        $nickFury = M::mock('Avengers\People\NickFury');
+        $initiative = new \Avengers\AvengersInitiative($nickFury);
 
         $this->assertNotNull($initiative);
     }
     
     public function testAvengersCanBeAddedToTheRollCall() {
-        $initiative = new \Avengers\AvengersInitiative();
+        $nickFury = M::mock('Avengers\People\NickFury');
+        $initiative = new \Avengers\AvengersInitiative($nickFury);
         
         $availableAvengers = $initiative->getAvailableAvengers();        
         $this->assertEquals(0, count($availableAvengers));
@@ -31,7 +33,8 @@ class AvengersInitiativeTest extends \PHPUnit_Framework_TestCase
     }
     
     public function testAvengersCanBeAssembled() {
-        $initiative = new \Avengers\AvengersInitiative();
+        $nickFury = M::mock('Avengers\People\NickFury');
+        $initiative = new \Avengers\AvengersInitiative($nickFury);
 
         $avenger = M::mock('Avengers\Avenger');
         $initiative->addAvenger($avenger);
