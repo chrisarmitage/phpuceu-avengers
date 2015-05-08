@@ -11,5 +11,11 @@
             "name": "Chris Armitage",
             "email": "dev@chrisarmitage.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "Avengers\\": "src/Avengers/"
+        }
+    }
+
 }
