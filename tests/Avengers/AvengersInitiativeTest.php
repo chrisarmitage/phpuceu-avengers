@@ -6,21 +6,23 @@ use \Mockery as M;
 
 class AvengersInitiativeTest extends \PHPUnit_Framework_TestCase
 {
+    protected $initiative;
+    
+    public function setUp() {
+        $nickFury = M::mock('Avengers\People\NickFury');
+        $this->initiative = new \Avengers\AvengersInitiative($nickFury);
+    }
     
     public function tearDown() {
         M::close();
     }
     
     public function testClassAvailable() {
-        $nickFury = M::mock('Avengers\People\NickFury');
-        $initiative = new \Avengers\AvengersInitiative($nickFury);
-
-        $this->assertNotNull($initiative);
+        $this->assertNotNull($this->initiative);
     }
     
     public function testAvengersCanBeAddedToTheRollCall() {
-        $nickFury = M::mock('Avengers\People\NickFury');
-        $initiative = new \Avengers\AvengersInitiative($nickFury);
+        $initiative = $this->initiative;
         
         $availableAvengers = $initiative->getAvailableAvengers();        
         $this->assertEquals(0, count($availableAvengers));
@@ -33,8 +35,7 @@ class AvengersInitiativeTest extends \PHPUnit_Framework_TestCase
     }
     
     public function testAvengersCanBeAssembled() {
-        $nickFury = M::mock('Avengers\People\NickFury');
-        $initiative = new \Avengers\AvengersInitiative($nickFury);
+        $initiative = $this->initiative;
 
         $avenger = M::mock('Avengers\Avenger');
         $initiative->addAvenger($avenger);
