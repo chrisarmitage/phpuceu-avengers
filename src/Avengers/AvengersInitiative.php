@@ -2,6 +2,8 @@
 
 namespace Avengers;
 
+use Avengers\People\Director;
+
 class AvengersInitiative
 {
     protected $director;
