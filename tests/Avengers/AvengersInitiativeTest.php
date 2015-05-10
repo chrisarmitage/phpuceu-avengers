@@ -2,15 +2,16 @@
 
 namespace Avengers\Tests;
 
-use \Mockery as M;
+use Avengers\AvengersInitiative,
+    \Mockery as M;
 
 class AvengersInitiativeTest extends \PHPUnit_Framework_TestCase
 {
     protected $initiative;
     
     public function setUp() {
-        $nickFury = M::mock('Avengers\People\NickFury');
-        $this->initiative = new \Avengers\AvengersInitiative($nickFury);
+        $director = M::mock('Avengers\People\Director');
+        $this->initiative = new AvengersInitiative($director);
     }
     
     public function tearDown() {

@@ -2,18 +2,20 @@
 
 namespace Avengers;
 
+use Avengers\People\Director;
+
 class AvengersInitiative
 {
     protected $director;
-    
+
     protected $availableAvengers;
     protected $assembledAvengers;
     
-    public function __construct(\Avengers\People\NickFury $director) {
+    public function __construct(Director $director) {
         $this->director = $director;
     }
     
-    public function addAvenger(\Avengers\Avenger $avenger) {
+    public function addAvenger(Avenger $avenger) {
         $this->availableAvengers[] = $avenger;
     }
     
