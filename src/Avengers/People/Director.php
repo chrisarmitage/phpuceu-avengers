@@ -3,11 +3,11 @@
 namespace Avengers\People;
 
 /**
- * Class NickFury
+ * Interface Director
  *
  * @package Avengers\People
  */
-class NickFury implements Director
+interface Director
 {
-    
+
 }
